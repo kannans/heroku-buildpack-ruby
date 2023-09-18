@@ -8,6 +8,8 @@
 #   binstub.file? # => true
 #   binstub.binary? #=> false
 #   binstub.bad_shebang? #=> false
+require 'delegate'
+
 class LanguagePack::Helpers::BinstubWrapper < SimpleDelegator
   def initialize(string_or_pathname)
     @binstub = Pathname.new(string_or_pathname)
